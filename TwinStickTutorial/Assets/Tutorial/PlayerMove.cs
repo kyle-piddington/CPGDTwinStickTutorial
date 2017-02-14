@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-    public float speed = 0.5f;
+    public float speed = 0.25f;
     public float fireSpeed;
     public float reloadTime;
     public bool moveEnabled = true;
@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour {
 
     private Rigidbody2D rb;
     public GameObject projectilePrefab;
-
+	public CameraScript cameraObject;
     private float prevAngle;
     private bool canShoot = true;
     private float reload;
@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        bool fireProjectile = Input.GetButtonDown("Fire1");
+        bool fireProjectile = Input.GetButton("Fire1");
 
         if (moveEnabled)
         {
@@ -54,7 +54,10 @@ public class PlayerMove : MonoBehaviour {
 
         if (fireProjectile && canShoot)
         {
-
+			if (cameraObject != null) {
+				
+				cameraObject.cameraShake (0.1f, 0.25f);
+			}
             Vector3 vel3D = mouseDir.normalized;
             GameObject bullet = (GameObject)Instantiate(projectilePrefab,
                                                             transform.position + vel3D,
@@ -62,15 +65,17 @@ public class PlayerMove : MonoBehaviour {
             vel3D *= fireSpeed;
             bullet.GetComponent<KnifeScript>().vel = new Vector2(vel3D.x, vel3D.y);
 
-            if (!canShoot && reload < reloadTime)
-            {
-                reload += Time.deltaTime;
-            }
-            if (!canShoot && (reload >= reloadTime))
-            {
-                canShoot = true;
-                reload = 0;
-            }
+           
+            
         }
+		if (!canShoot && reload < reloadTime)
+		{
+			reload += Time.deltaTime;
+		}
+		if (!canShoot && (reload >= reloadTime))
+		{
+			canShoot = true;
+			reload = 0;
+		}
     }
 }

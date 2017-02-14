@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStickTutorial.CSharp", "TwinStickTutorial.CSharp.csproj", "{DC69AFDE-BEEB-A0E5-C99B-D390E7460650}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{8618E1A4-0572-BD9A-8932-ADACAF9B67EB}") = "TwinStickTutorial", "Assembly-CSharp.csproj", "{5D4D9B34-2D70-1209-2EBD-D7950B61703A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DC69AFDE-BEEB-A0E5-C99B-D390E7460650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC69AFDE-BEEB-A0E5-C99B-D390E7460650}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC69AFDE-BEEB-A0E5-C99B-D390E7460650}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC69AFDE-BEEB-A0E5-C99B-D390E7460650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D4D9B34-2D70-1209-2EBD-D7950B61703A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4D9B34-2D70-1209-2EBD-D7950B61703A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4D9B34-2D70-1209-2EBD-D7950B61703A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4D9B34-2D70-1209-2EBD-D7950B61703A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
