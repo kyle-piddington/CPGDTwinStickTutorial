@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        bool fireProjectile = Input.GetButton("Fire1");
+        bool fireProjectile = Input.GetButtonDown("Fire1");
 
         if (moveEnabled)
         {
@@ -76,6 +76,9 @@ public class PlayerMove : MonoBehaviour {
 		{
 			canShoot = true;
 			reload = 0;
+		}
+		if (Input.GetButton ("Fire3")) {
+			cameraObject.cameraWaypoint (Vector2.zero, 2.0f);	
 		}
     }
 }

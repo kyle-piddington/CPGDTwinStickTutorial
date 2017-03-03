@@ -41,9 +41,11 @@ public class KnifeScript : MonoBehaviour {
 			rb.isKinematic = true;
 			rb.velocity = Vector2.zero;
 			rb.angularVelocity = 0.0f;
-		} else if(collision.gameObject.tag == "Wall"){
+		} else if (collision.gameObject.tag == "Wall") {
 			isDead = true;
 			rb.AddTorque (10.0f);
+		} else if (!isDead && collision.gameObject.tag == "Hard Wall") {
+			rb.AddTorque (50.0f);
 		}
 
 
